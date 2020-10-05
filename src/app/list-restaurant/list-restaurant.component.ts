@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../restaurant.service'
+import { RestaurantService } from '../restaurant.service';
 
 @Component({
   selector: 'app-list-restaurant',
   templateUrl: './list-restaurant.component.html',
-  styleUrls: ['./list-restaurant.component.scss']
+  styleUrls: ['./list-restaurant.component.scss'],
 })
 export class ListRestaurantComponent implements OnInit {
-
-  collection : any =[];
-  constructor(private restaurant : RestaurantService) { }
+  collection: any = [];
+  constructor(private restaurant: RestaurantService) {}
 
   ngOnInit(): void {
     this.restaurant.getList().subscribe((result) => {
@@ -19,10 +18,9 @@ export class ListRestaurantComponent implements OnInit {
   }
 
   deleteRestaurant(item) {
-    this.collection.splice(item-1,1);
+    this.collection.splice(item - 1, 1);
     this.restaurant.deleteRestaurant(item).subscribe((result) => {
-      console.warn("result",result);
-    })
+      console.warn('result', result);
+    });
   }
-
 }
