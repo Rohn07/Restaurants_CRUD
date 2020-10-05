@@ -12,4 +12,7 @@ export class RestaurantService {
   getList() {
     return this.http.get(this.url);
   }
+  addRestaurant(data) {
+    return this.http.post(this.url,data);
+  }
 }
