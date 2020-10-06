@@ -14,23 +14,23 @@ export class RestaurantService {
     return this.http.get(this.url);
   }
 
-  addRestaurant(data) {
+  addRestaurant(data: any) {
     return this.http.post(this.url,data);
   }
 
-  deleteRestaurant(id) {
+  deleteRestaurant(id: any) {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  getRestaurant(id) {
+  getRestaurant(id: any) {
     return this.http.get(`${this.url}/${id}`);
   }
 
-  updateRestaurant(id,data) {
+  updateRestaurant(id: any,data: any) {
     return this.http.put(`${this.url}/${id}`, data);
   }
 
-  registerUser(data) {
+  registerUser(data: any) {
     return this.http.post(this.rootUrl+"users",data);
   }
 }
